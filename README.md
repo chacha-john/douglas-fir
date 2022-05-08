@@ -40,9 +40,9 @@
 
 # Authors Info
 
-Linkedin - [Chacha John](https://www.linkedin.com/in/rikonnect/)
+Linkedin - [Chacha John](https://www.linkedin.com/in/chachaup/)
 
-Twitter - [Chacha](https://www.twitter.com/rikonnect)
+Twitter - [Chacha](https://www.twitter.com/_chachaup)
 
 Email - [Chacha John](mailto:chachaerickjo@gmail.com)
 

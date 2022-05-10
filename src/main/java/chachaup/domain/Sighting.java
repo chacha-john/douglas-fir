@@ -13,9 +13,12 @@ public class Sighting {
     private Timestamp timeOfSight;
     private String rangerName;
 
-    public Sighting(String animalName, String rangerName) {
+    private String location;
+
+    public Sighting(String animalName, String rangerName, String location) {
         this.animalName = animalName;
         this.rangerName = rangerName;
+        this.location = location;
         timeOfSight = new Timestamp(new Date().getTime());
     }
 
@@ -50,12 +53,22 @@ public class Sighting {
     public void setRangerName(String rangerName) {
         this.rangerName = rangerName;
     }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public void save(){
-        String sql = "INSERT INTO sightings (animalName, rangerName,timeOfSight) VALUES(:animalName, :rangerName, now())";
+        String sql = "INSERT INTO sightings (animalName, rangerName, location ,timeOfSight) VALUES(:animalName, :rangerName, :location, now())";
         try(Connection con = DB.sql2o.open()){
             this.id = (int) con.createQuery(sql,true)
                     .addParameter("animalName",this.animalName)
                     .addParameter("rangerName",this.rangerName)
+                    .addParameter("location",this.location)
                     .executeUpdate()
                     .getKey();
         }

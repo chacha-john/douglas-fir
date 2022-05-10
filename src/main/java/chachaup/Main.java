@@ -1,9 +1,11 @@
 package chachaup;
 
+import chachaup.domain.Animal;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -23,10 +25,19 @@ public class Main {
             // path to the home page
         get("/",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model,"index,hbs");
+            List<Animal> animals = Animal.getAll();
+            model.put("animals",animals);
+            return new ModelAndView(model,"index.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        //get - show more details about an animal
+        get("/animals/:id",(request,response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfPostToFind = Integer.parseInt(request.params(":id"));
+            Animal animal = Animal.findById(idOfPostToFind);
+            model.put("animal",animal);
+            return new ModelAndView(model, "details.hbs");
+        },new HandlebarsTemplateEngine());
 
         }
 

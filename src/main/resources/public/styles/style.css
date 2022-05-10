@@ -2,7 +2,7 @@ body{
 background-image: url("/images/fox.jpg");
 background-size: cover;
 background-repeat: no-repeat;
-background-position: center;
+background-position: top;
 height: 100vh;
 position: fixed;
 }
@@ -10,4 +10,9 @@ position: fixed;
 ul{
 list-style-type: none;
 display: flex;
+}
+a{
+font-color: white;
+margin: 0 2%
+text-align: center;
 }

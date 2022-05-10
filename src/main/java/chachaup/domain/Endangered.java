@@ -11,6 +11,11 @@ public class Endangered extends Animal{
     private int age;
     private String category;
 
+    public static final String HEALTHY = "healthy";
+    public static final String ILL = "ill";
+    public static final String OKAY = "okay";
+
+
 //    public static final String
     public Endangered(String animalName, String health, int age) {
         super(animalName);

@@ -1,0 +1,17 @@
+{{#partial "content"}}
+    <h3>Hi, Ranger! Add a new endangered animal you have spotted!</h3>
+    <form action="/animals/new" method="post">
+        <label for="animalName">What is the animal name?</label>
+        <input type="text" id="animalName" name="animalName" required>
+        <label for="health">Select the health condition of the animal</label>
+        <select name="health" id="health" required>
+            <option value="healthy">healthy</option>
+            <option value="ill">ill</option>
+            <option value="okay">okay</option>
+        </select>
+        <label for="age">Add the age of the animal</label>
+        <input name="age" id="age" type="text" required>
+        <button type="submit">Add animal</button>
+    </form>
+{{/partial}}
+{{> layout.hbs}}

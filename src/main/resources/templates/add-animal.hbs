@@ -1,8 +1,9 @@
 {{#partial "content"}}
     <h3>Hi, Ranger! Add a new animal you have spotted!</h3>
-    <form action="/animals/add" method="post">
+    <form action="/animals/new" method="post">
         <label for="animalName">What is the animal name?</label>
-        <input type="text" id="animalName" name="animalName">
+        <input type="text" id="animalName" name="animalName" required>
         <button type="submit">Add animal</button>
     </form>
 {{/partial}}
+{{> layout.hbs}}

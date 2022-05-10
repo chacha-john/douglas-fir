@@ -1,0 +1,13 @@
+body{
+background-image: url("/images/fox.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+height: 100vh;
+position: fixed;
+}
+
+ul{
+list-style-type: none;
+display: flex;
+}

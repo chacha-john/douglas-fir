@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}D Fir{{/block}}</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+{{#block "body"}}
+    <nav>
+        <ul>
+            <li><a href="/">D Fir</a> </li>
+            <li><a href="/hero/form">Add an animal</a></li>
+            <li><a href="/hero/all">See all Animals</a> </li>
+            <li><a href="/squad/form">Add a new sighting</a></li>
+            <li><a href="/squad/all">Show all Sightings</a> </li>
+        </ul>
+    </nav>
+    <h3 class="flier">Save our animals! Protect the diversity! Save our existence!</h3>
+    <section id="banner">
+        {{#block "content"}}
+
+        {{/block}}
+    </section>
+    <section id="action">
+        {{#block "action"}}
+
+        {{/block}}
+    </section>
+    {{#block "footer"}}
+
+    {{/block}}
+{{/block}}
+</body>
+
+</html>

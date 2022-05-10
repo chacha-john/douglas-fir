@@ -1,0 +1,23 @@
+{{#partial "content"}}
+    <section>
+        <div class="fact">
+            <h2>Did you know?</h2>
+        </div>
+        <div>
+            <p>Wildlife population sizes dropped by two thirds since 1970!</p>
+        </div>
+    </section>
+    <section>
+        {{#if animals}}
+            <h4>Here are some of the animals that have been identified to exist in the <i>Douglas Fir forest.</i></h4>
+            {{#each animals}}
+                <p>{{id}}. {{animalName}}</p> Click <a href="animals/{{id}}">here</a> for more details.
+            {{/each}}
+        {{else}}
+            <h4>Hi, Ranger! Have you identified an animal in <i>Douglas Fir forest</i>? Add it <a href="animals/new">here.</a> </h4>
+        {{/if}}
+
+    </section>
+{{/partial}}
+
+{{> layout.hbs}}

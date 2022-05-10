@@ -22,21 +22,21 @@ class SightingTest {
 
     @Test
     void sighting_instantiatesCorrectly() {
-        Sighting sighting = new Sighting("kayote","can i call you tom");
+        Sighting sighting = new Sighting("kayote","can i call you tom","jersey");
         sighting.save();
         assertEquals(3,sighting.getId());
     }
 
     @Test
     void sighting_recordsTimeWhenSightingWasMade() {
-        Sighting sighting = new Sighting("kayote","can i call you tom");
+        Sighting sighting = new Sighting("kayote","can i call you tom","jersey");
         sighting.save();
         assertEquals(now().getSecond(), Sighting.findById(sighting.getId()).getTimeOfSight().getSeconds());
     }
 
     @Test
     void sighting_searchById() {
-        Sighting sighting = new Sighting("kayote","can i call you tom");
+        Sighting sighting = new Sighting("kayote","can i call you tom", "jersey");
         sighting.save();
         Sighting sighting1 = Sighting.findById(sighting.getId());
         assertTrue(sighting.getRangerName().equals(sighting1.getRangerName()));

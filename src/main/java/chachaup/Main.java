@@ -39,6 +39,21 @@ public class Main {
             return new ModelAndView(model, "details.hbs");
         },new HandlebarsTemplateEngine());
 
+        // get - add a new animal
+        get("/animals/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "add-animal.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //post - process data collected when someone is adding a new animal
+        post("/animals/add",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String nameOfAnimal = request.queryParams("animalName");
+            Animal animal = new Animal(nameOfAnimal);
+            animal.save();
+            return new ModelAndView(model,"success.hbs");
+        }, new HandlebarsTemplateEngine());
+
         }
 
     }

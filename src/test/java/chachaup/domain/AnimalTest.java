@@ -4,6 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AnimalTest {
@@ -52,6 +55,13 @@ class AnimalTest {
         animal.save();
         System.out.println(animal.getId());
         assertEquals(animal, Animal.findById(animal.getId()));
+
+    }
+
+    @Test
+    void animals_getAllUniqueEntriesToUseAsDropdown() {
+        List<Animal> animalArrayList = Animal.getUnique();
+        assertEquals("banana",animalArrayList.get(1).getAnimalName());
 
     }
 }

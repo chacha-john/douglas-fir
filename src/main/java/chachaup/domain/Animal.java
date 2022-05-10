@@ -72,4 +72,12 @@ public class Animal {
             return animal;
         }
     }
+    public static List<Animal> getUnique(){
+        String sql = "SELECT DISTINCT animalName FROM animals";
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(Animal.class);
+        }
+    }
 }

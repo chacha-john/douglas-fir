@@ -18,7 +18,7 @@
 
 # Screenshots
 ![Landing page screenshot](/src/main/resources/public/images/luku.png "Landing page")
-![Add sighting page screenshot](/src/main/resources/public/images/luku2.png "Landing page")
+![Add sighting page screenshot](/src/main/resources/public/images/luku2.png "Add sighting page")
 
 # Technology Used
 * HTML5 - This was used for structuring the page.

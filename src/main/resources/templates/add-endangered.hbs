@@ -1,16 +1,22 @@
 {{#partial "content"}}
-    <h3>Hi, Ranger! Add a new endangered animal you have spotted!</h3>
-    <form action="/animals/new" method="post">
-        <label for="animalName">What is the animal name?</label>
-        <input type="text" id="animalName" name="animalName" required>
-        <label for="health">Select the health condition of the animal</label>
+    <h3 class="text-center">Hi, Ranger! Add a new endangered animal you have spotted!</h3>
+    <form action="/animals/endangered/new" method="post">
+        <label for="animalName">What is the animal name?</label><br>
+        <input type="text" id="animalName" name="animalName" required><br>
+        <label for="health">Select the health condition of the animal</label><br>
         <select name="health" id="health" required>
+            <option></option>
             <option value="healthy">healthy</option>
             <option value="ill">ill</option>
             <option value="okay">okay</option>
-        </select>
-        <label for="age">Add the age of the animal</label>
-        <input name="age" id="age" type="text" required>
+        </select><br>
+        <label for="age">How old does the animal seem?</label><br>
+        <select name="age" id="age" required>
+            <option></option>
+            <option value="newborn">newborn</option>
+            <option value="young">young</option>
+            <option value="adult">adult</option>
+        </select><br>
         <button type="submit">Add animal</button>
     </form>
 {{/partial}}

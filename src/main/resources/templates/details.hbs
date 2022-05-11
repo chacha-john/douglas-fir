@@ -1,9 +1,11 @@
 {{#partial "content"}}
     {{#if endangered}}
-        <p>This animal is in danger of extinction!</p>
-        <p>The animal is {{age}} and the health of the animal is {{health}}.</p>
+        <p class="text-center">This animal is in danger of extinction!</p>
+        {{endangered.health}}
+        {{endangered.age}}
+        <p class="text-center">Preserve and protect the Fauna.</p>
     {{else}}
-        This animal is not endangered! Preserve and protect the Fauna.
+        <p class="text-center">This animal is not endangered! Preserve and protect the Fauna.</p>
     {{/if}}
 
 {{/partial}}

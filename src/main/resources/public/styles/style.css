@@ -4,15 +4,49 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: top;
 height: 100vh;
-position: fixed;
 }
 
-ul{
-list-style-type: none;
-display: flex;
+nav{
+background-color: transparent;
 }
-a{
-font-color: white;
-margin: 0 2%
+
+nav div a{
+text-decoration:none;
+font-size: 110%;
+font-weight: bold;
+color: white;
+margin: 0 2%;
 text-align: center;
 }
+
+form{
+width: 60%;
+position: relative;
+left: 20%;
+margin: 4%;
+font-size: large;
+}
+
+input{
+background-color: #3F3D63;
+border-radius: 5px;
+}
+
+#banner{
+width: 60%;
+background-color: transparent;
+position: relative;
+left: 20%;
+margin: 5%;
+}
+.flier{
+text-align: center;
+}
+
+button{
+background-color: #908AE3;
+border-radius: 5px;
+font-size: 120%;
+margin-top: 2%;
+}
+

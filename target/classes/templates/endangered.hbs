@@ -1,0 +1,15 @@
+{{#partial "content"}}
+    <section>
+        {{#if animals}}
+            <h4>Here are the endangered animals that have been identified to exist in the <i>Douglas Fir forest.</i></h4>
+            {{#each animals}}
+                <p>{{id}}. {{animalName}}</p> Click <a href="/animals/{{id}}">here</a> for more details.
+            {{/each}}
+        {{else}}
+            <h4>Hi, Ranger! Have you identified an endangered animal in <i>Douglas Fir forest</i>? Add it <a href="/animals/endangered/new">here.</a> </h4>
+        {{/if}}
+
+    </section>
+{{/partial}}
+
+{{> layout.hbs}}

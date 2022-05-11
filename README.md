@@ -5,8 +5,9 @@
 # Table of Content
 
 + [Description](#description)
-+ [Design](#design)
++ [Screenshots](#screenshots)
 + [Technology Used](#technology-used)
++ [Set up Instructions](#setup-instructions)
 + [Licence](#licence)
 + [Authors Info](#authors-Info)
 
@@ -15,8 +16,9 @@
 
 [Go Back to the top](#douglas-fir)
 
-# Design
-[Figma]()
+# Screenshots
+![Landing page screenshot](/src/main/resources/public/images/luku.png "Landing page")
+![Add sighting page screenshot](/src/main/resources/public/images/luku2.png "Landing page")
 
 # Technology Used
 * HTML5 - This was used for structuring the page.
@@ -29,6 +31,13 @@
 
 * Heroku - deployment for live version
 
+[How to set up](#setup-instructions)
+#### In PSQL:
+* CREATE DATABASE wildlife_tracker; 
+* CREATE TABLE animals(id serial PRIMARY KEY, animalName varchar, category varchar, health varchar, age varchar);
+* CREATE TABLE sightings (id serial PRIMARY KEY, animalName varchar, rangerName varchar, timeOfSight timestamp);
+
+[Live link](https://riko-douglas-fir.herokuapp.com/)
 
 [Go Back to the top](#douglas-fir)
 

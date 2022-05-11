@@ -80,4 +80,13 @@ public class Animal {
                     .executeAndFetch(Animal.class);
         }
     }
+    public static Animal findEndangered(int id){
+        String sql = "SELECT * FROM animals WHERE id = :id AND category = 'endangered';";
+        try(Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .addParameter("id",id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(Animal.class);
+        }
+    }
 }

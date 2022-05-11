@@ -8,7 +8,7 @@ import java.util.List;
 public class Endangered extends Animal{
 
     private String health;
-    private int age;
+    private String age;
     private String category;
 
     public static final String HEALTHY = "healthy";
@@ -17,7 +17,7 @@ public class Endangered extends Animal{
 
 
 //    public static final String
-    public Endangered(String animalName, String health, int age) {
+    public Endangered(String animalName, String health, String age) {
         super(animalName);
         this.health = health;
         this.age = age;
@@ -41,11 +41,11 @@ public class Endangered extends Animal{
         this.health = health;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -59,7 +59,6 @@ public class Endangered extends Animal{
 
     @Override
     public void save() {
-        super.save();
         String sql = "INSERT INTO animals (animalName,health,age,category) VALUES(:animalName,:health,:age,:category)";
         try(Connection con = DB.sql2o.open()){
             this.id = (int) con.createQuery(sql,true)

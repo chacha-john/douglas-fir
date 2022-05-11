@@ -77,9 +77,9 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>riko-heroes</appName>
+                    <appName>riko-douglas-fir</appName>
                     <processTypes>
-                        <web>java -jar target/heroes-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/douglasFir-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>

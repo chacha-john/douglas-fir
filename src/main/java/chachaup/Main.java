@@ -2,6 +2,7 @@ package chachaup;
 
 import chachaup.domain.Animal;
 import chachaup.domain.Endangered;
+import chachaup.domain.Sighting;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -37,6 +38,8 @@ public class Main {
             int idOfPostToFind = Integer.parseInt(request.params(":id"));
             Animal animal = Animal.findById(idOfPostToFind);
             model.put("animal",animal);
+            Animal endangered = Animal.findEndangered(idOfPostToFind);
+            model.put("endangered",endangered);
             return new ModelAndView(model, "details.hbs");
         },new HandlebarsTemplateEngine());
 
@@ -59,6 +62,18 @@ public class Main {
             animal.save();
             model.put("animal",animal);
             System.out.println(animal.getAnimalName());
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
+        //post - process data collected when someone is adding a new animal
+        post("/animals/endangered/new",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String nameOfAnimal = request.queryParams("animalName");
+            String health = request.queryParams("health");
+            String  age = request.queryParams("age");
+            Endangered endangered = new Endangered(nameOfAnimal,health,age);
+            endangered.save();
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
@@ -86,12 +101,44 @@ public class Main {
             Map<String, Object> model = new HashMap<>();
             String animalName = request.queryParams("animalName");
             String health = request.queryParams("health");
-            int ageCollected = Integer.parseInt(request.queryParams("age"));
+            String  ageCollected = request.queryParams("age");
             Endangered endangered = new Endangered(animalName,health,ageCollected);
             endangered.save();
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
+
+        //get - form for adding a sighting
+        get("/sightings/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Animal> animals = Animal.getUnique();
+            model.put("animals",animals);
+            return new ModelAndView(model, "add-sighting.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //post - process sightings data
+        post("/sightings/all/new", (request,response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String animalName = request.queryParams("animalName");
+            String location = request.queryParams("location");
+            String  age = request.queryParams("age");
+            String health = request.queryParams("health");
+            String rangerName = request.queryParams("rangerName");
+            Sighting sighting = new Sighting(animalName,rangerName,location);
+            model.put("sighting",sighting);
+            sighting.save();
+            response.redirect("/sightings");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
+        // get - show all sightings
+        get("/sightings",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Sighting> sightings = Sighting.getAll();
+            model.put("sightings",sightings);
+            return new ModelAndView(model,"sightings.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 
 

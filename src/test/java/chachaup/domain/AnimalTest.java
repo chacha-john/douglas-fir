@@ -64,4 +64,11 @@ class AnimalTest {
         assertEquals("banana",animalArrayList.get(1).getAnimalName());
 
     }
+
+    @Test
+    void getEndangered_getEndangeredAnimalsDescription() {
+        Endangered endangered = new Endangered("people","healthy","young");
+        Animal animal = Animal.findEndangered(endangered.getId());
+        assertEquals("people",animal.getAnimalName());
+    }
 }

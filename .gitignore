@@ -92,3 +92,9 @@ settings.gradle
 ############
 .idea
 .idea/
+
+#pom files for deployment
+pom.xml
+
+#target files
+target
